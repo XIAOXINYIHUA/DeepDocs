@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── 专业文档工作台主题 ─── */
+:root {
+  --color-border: #e2e8f0;
+  --color-surface: #f8fafc;
+  --color-surface-raised: #ffffff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-accent: #2563eb;
+  --color-accent-light: #eff6ff;
+  --color-citation-bg: #eef2ff;
+  --color-citation-border: #a5b4fc;
+  --color-evidence-green: #22c55e;
+  --color-evidence-yellow: #f59e0b;
+  --color-evidence-red: #ef4444;
+  --color-evidence-gray: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ─── 三栏布局 ─── */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar-panel {
+  width: 260px;
+  min-width: 260px;
+  background: var(--color-surface-raised);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.analysis-panel {
+  width: 380px;
+  min-width: 380px;
+  background: var(--color-surface-raised);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ─── 顶部栏 ─── */
+.topbar {
+  height: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-raised);
+}
+
+/* ─── 引用样式 ─── */
+.citation-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  margin: 0 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-accent);
+  background: var(--color-citation-bg);
+  border: 1px solid var(--color-citation-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.citation-link:hover {
+  background: #dde3ff;
+}
+
+.citation-highlight {
+  background: rgba(37, 99, 235, 0.08);
+  border: 2px solid var(--color-accent);
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+/* ─── 证据覆盖色块 ─── */
+.evidence-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.evidence-dot--direct { background: var(--color-evidence-green); }
+.evidence-dot--partial { background: var(--color-evidence-yellow); }
+.evidence-dot--none { background: var(--color-evidence-red); }
+.evidence-dot--general { background: var(--color-evidence-gray); }
+
+/* ─── 解析进度条 ─── */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all 0.3s;
+}
+
+.step-dot--done { background: var(--color-evidence-green); }
+.step-dot--running { background: var(--color-accent); animation: pulse 1.5s infinite; }
+.step-dot--error { background: var(--color-evidence-red); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ─── 滚动条 ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-200);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-300);
+}

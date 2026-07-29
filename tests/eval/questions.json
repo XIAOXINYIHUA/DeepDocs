@@ -1,0 +1,40 @@
+[
+  {
+    "id": "q001",
+    "question": "付款周期是多久？",
+    "answer": "验收后30个工作日",
+    "source_doc": "合同A.pdf",
+    "source_page": 12,
+    "type": "fact"
+  },
+  {
+    "id": "q002",
+    "question": "违约责任如何规定？",
+    "answer": "逾期按每日0.1%支付违约金",
+    "source_doc": "合同B.docx",
+    "source_page": 8,
+    "type": "fact"
+  },
+  {
+    "id": "q003",
+    "question": "合同总金额是多少？",
+    "answer": "500万元",
+    "source_doc": "合同A.pdf",
+    "source_page": 3,
+    "type": "fact"
+  },
+  {
+    "id": "q004",
+    "question": "质保金比例是多少？",
+    "answer": "合同总价的5%",
+    "source_doc": "合同A.pdf",
+    "source_page": 15,
+    "type": "fact"
+  },
+  {
+    "id": "q005",
+    "question": "这个文档里提到人工智能了吗？",
+    "answer": null,
+    "type": "unanswerable"
+  }
+]
